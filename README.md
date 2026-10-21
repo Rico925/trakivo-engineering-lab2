@@ -115,3 +115,11 @@ curl -X POST http://127.0.0.1:8000/telemetry/import \
 ```
 
 Run tests from the project root with `python -m pytest -q`.
+## Team & Contributions
+
+TRAKIVO is built by a team working across backend engineering, frontend development, and website development.
+
+- **Rishi**: Backend Development Username:ricohulkeburg
+- **Akshay**: Frontend Development Username:akshayvijayasankar
+- **Pratyush**: Frontend Development Username:pratsgupta12
+- **Aarav**: Website Development.    Username:aaravojhatact
