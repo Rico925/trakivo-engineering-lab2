@@ -1,0 +1,6 @@
+syntax = "proto3";
+package trakivo.superbase;
+message TelemetryFrame { double race_distance=1; uint64 video_timestamp_ms=2; double speed_kmh=3; double rpm=4; double throttle_pct=5; double brake_pct=6; double steering_angle=7; map<string,double> sensors=8; bool is_anomaly=9; string anomaly_type=10; }
+message TelemetryRequest { double start_distance=1; double end_distance=2; string filter_sensor=3; }
+message TelemetryStreamResponse { repeated TelemetryFrame frames=1; }
+service TelemetryService { rpc GetTelemetrySlice(TelemetryRequest) returns (TelemetryStreamResponse); rpc StreamLiveTelemetry(TelemetryRequest) returns (stream TelemetryFrame); }

@@ -1,0 +1,3 @@
+const test=require('node:test');const assert=require('node:assert/strict');const {normalizeFrame}=require('./telemetry-utils');
+test('normalizeFrame normalizes telemetry fields',()=>{const f=normalizeFrame({race_distance:12.5,video_timestamp_ms:'123',speed_kmh:287.3,sensors:{tire_fl_temp:104.2},is_anomaly:true,anomaly_type:'DemoSensorSpike'});assert.equal(f.race_distance,12.5);assert.equal(f.video_timestamp_ms,'123');assert.equal(f.speed_kmh,287.3);assert.equal(f.sensors.tire_fl_temp,104.2);assert.equal(f.is_anomaly,true);});
+test('normalizeFrame supplies safe defaults',()=>{const f=normalizeFrame({});assert.equal(f.race_distance,0);assert.equal(f.speed_kmh,0);assert.deepEqual(f.sensors,{});assert.equal(f.is_anomaly,false);});
